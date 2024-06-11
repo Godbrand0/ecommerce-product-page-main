@@ -119,8 +119,8 @@ document.addEventListener('DOMContentLoaded', function () {
     function reloadCart() {
         const cartItems = document.getElementById('cart-items');
         
-        cartItems.innerHTML = ''; // Clear current cart items
-         // Clear current cart items
+        cartItems.innerHTML = ''; 
+         
         let totalItems = 0;
 
         for (const key in listCards) {
@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 
                             </div>
                             
-                            <i class="fa-solid fa-trash-can" class="cursor-pointer text-gray-400"></i>
+                            <i class="fa-solid fa-trash-can cursor-pointer text-gray-400" id="delete"></i>
                         </div>
                     </div>
 
@@ -168,4 +168,20 @@ document.getElementById('add-to-cart').addEventListener('click', () => {
     addToCart(1);
     your.innerHTML = '';
 });
+// const deleteOption = document.querySelector('#delete')
+// deleteOption.addEventListener('click', () => {
+   
+//     if (listCards[key].quantity > 1) {
+//         listCards[key].quantity -= 1;
+//     } else {
+//         delete listCards[key];
+//     }
+//     reloadCart()
+// });
+
+// const deleteButton = document.querySelector('#delete'); // This would typically be inside a loop or a specific context
+// deleteButton.addEventListener('click', () => {
+//     const key = deleteButton.getAttribute('data-key');
+//     deleteItem(key);
+// });
 })
