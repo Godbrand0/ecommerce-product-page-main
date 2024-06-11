@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const image2 = document.getElementById('image2');
     const image3 = document.getElementById('image3');
     const image4 = document.getElementById('image4');
+    const your = document.querySelector('.your');
 
 
 
@@ -108,11 +109,63 @@ document.addEventListener('DOMContentLoaded', function () {
     let listCards = {};
 
     function addToCart(key) {
-        if (listCards[key] == null) {
-            listCards[key] = { ...products[key], quantity: 1 };
-        } else {
-            listCards[key].quantity += 1;
-        }
-        reloadCart();
+    if (listCards[key] == null) {
+        listCards[key] = { ...products[key], quantity: 1 };
+    } else {
+        listCards[key].quantity += 1;
     }
+    reloadCart();
+    
+    function reloadCart() {
+        const cartItems = document.getElementById('cart-items');
+        
+        cartItems.innerHTML = ''; // Clear current cart items
+         // Clear current cart items
+        let totalItems = 0;
+
+        for (const key in listCards) {
+            const item = listCards[key];
+            totalItems += item.quantity;
+
+            const totalPrice = (item.quantity * item.price).toFixed(2);
+
+            const itemElement = document.createElement('div');
+            itemElement.className = 'cart-item';
+            itemElement.innerHTML = `
+                <div class="flex m-3 gap-10 flex-col">
+                    <div class="flex  gap-4 items-center">
+                        <img src="${item.image}" alt="${item.name}" class="rounded-md w-12 h-12">
+                        <div class="flex gap-3">
+                            <div class="text-sm text-gray-400">
+                                <p class="">${item.name}</p>
+                                <div class="flex">
+                                    <p class="flex">${item.quantity} x $${item.price}</p>
+                                    <span class="font-bold text-black mx-3">$${totalPrice}</span>
+                                </div>
+                                
+                            </div>
+                            
+                            <i class="fa-solid fa-trash-can" class="cursor-pointer text-gray-400"></i>
+                        </div>
+                    </div>
+
+                    <div class="bg-orange-500 py-3 px-14 rounded-xl text-center cursor-pointer hover:opacity-45 duration-150" id="" >
+                        <i class="fa-solid fa-cart-shopping"></i> <span class="font-bold px-3 ">Checkout</span>
+                    </div>
+                </div>
+                
+                
+            `;
+            cartItems.appendChild(itemElement);
+        }
+
+        document.getElementById('cart-count').innerText = totalItems;
+    }
+
+    
+}
+document.getElementById('add-to-cart').addEventListener('click', () => {
+    addToCart(1);
+    your.innerHTML = '';
+});
 })
