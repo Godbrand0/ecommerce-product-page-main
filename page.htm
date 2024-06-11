@@ -26,11 +26,18 @@
                         </div>
                         
                         <div class=" mt-4 gap-5 justify-center hidden lg:flex ">
-                            <img src="images/image-product-2-thumbnail.jpg" alt="" class="w-20 rounded-lg h-20 object-cover cursor-pointer hover:opacity-45 duration-150 hover:border-orange-600 border-4" id="image">
-                            
-                            <img src="images/image-product-1-thumbnail.jpg" alt=""  class="w-20 rounded-lg h-20 object-cover cursor-pointer hover:opacity-45 duration-150 hover:border-orange-600 border-4"id="image">
-                            <img src="images/image-product-3-thumbnail.jpg" alt=""  class="w-20 rounded-lg h-20 object-cover cursor-pointer hover:opacity-45 duration-150 hover:border-orange-600 border-4" id="image">
-                            <img src="images/image-product-4-thumbnail.jpg" alt=""  class="w-20 rounded-lg h-20 object-cover cursor-pointer hover:opacity-45 duration-150 hover:border-orange-600 border-4" id="image">
+                            <div class="w-20 h-20 bg-white rounded-lg">
+                                <img src="images/image-product-2-thumbnail.jpg" alt="" class="w-20 rounded-lg h-20 object-cover cursor-pointer hover:opacity-45 duration-150" id="image">
+                            </div>
+                            <div class="w-20 h-20 bg-white rounded-lg">
+                                <img src="images/image-product-1-thumbnail.jpg" alt=""  class="w-20 rounded-lg h-20 object-cover cursor-pointer hover:opacity-45 duration-150"id="image">
+                            </div>
+                            <div class="w-20 h-20 bg-white rounded-lg">
+                                <img src="images/image-product-3-thumbnail.jpg" alt=""  class="w-20 rounded-lg h-20 object-cover cursor-pointer hover:opacity-45 duration-150 " id="image">
+                            </div>
+                            <div class="w-20 h-20 bg-white rounded-lg">
+                                <img src="images/image-product-4-thumbnail.jpg" alt=""  class="w-20 rounded-lg h-20 object-cover cursor-pointer hover:opacity-45 duration-150 " id="image">
+                            </div>                            
                         </div>
                     </div>
                 </div>
@@ -57,18 +64,22 @@
             <div class="flex lg:gap-20 items-center gap-4">
                 <i class="fa-solid fa-bars  text-2xl cursor-pointer lg:invisible" id="menu"></i>
                 <h1 class="text-4xl font-bold font-sans pb-2">sneakers</h1>
-                <ul class=" gap-10 font-semibold text-slate-400 hidden lg:flex">
-                    <li class="cursor-pointer  hover:text-black  duration-150 font-bold pb-5">Collections</li>
-                    <li class="cursor-pointer  hover:text-black  duration-150 font-bold pb-5">Men</li>
-                    <li class="cursor-pointer  hover:text-black  duration-150 font-bold pb-5">Women</li>
-                    <li class="cursor-pointer  hover:text-black  duration-150 font-bold pb-5">About</li>
-                    <li class="cursor-pointer  hover:text-black  duration-150 font-bold pb-5">Contact</li>
+                <ul class=" gap-10 font-semibold text-slate-400 duration-200 hidden lg:flex">
+                    <li class="cursor-pointer  hover:text-black  duration-200 font-bold pb-5">Collections</li>
+                    <li class="cursor-pointer  hover:text-black  duration-200 font-bold pb-5">Men</li>
+                    <li class="cursor-pointer  hover:text-black  duration-200 font-bold pb-5">Women</li>
+                    <li class="cursor-pointer  hover:text-black  duration-200 font-bold pb-5">About</li>
+                    <li class="cursor-pointer  hover:text-black   font-bold pb-5">Contact</li>
                 </ul>
             </div>
             
            
             <div class="flex items-center justify-center gap-7">
-                <i class="fa-solid fa-cart-shopping cursor-pointer" id="cart"></i>
+                <div>
+                    <span id="cart-count" class="text-white px-2 py-1 bg-orange-600 rounded-full text-sm absolute top-4 right-48">0</span>
+                    <i class="fa-solid fa-cart-shopping cursor-pointer" id="cart"></i>
+                </div>
+                
                 <img src="images/image-avatar.png" alt="" class="w-10 cursor-pointer hover:border-orange-500 duration-150 border-2 rounded-full">
             </div>
         </nav>
@@ -78,8 +89,10 @@
             <p class="font-bold border-b-2 border-slate-300 py-4 px-4">Cart</p>
 
             <div class="">
+                <div id="cart-items"></div>
                 <p class="text-slate-300 font-bold flex justify-center content-center">Your cart is empty.</p>
             </div>
+            
         </div>
         
 
@@ -87,16 +100,17 @@
             <div class="">
                 <div class="flex  items-center">
                     <i class="fa-solid fa-chevron-left  text-sm  bg-slate-50 rounded-full py-3 mx-6 px-3 text-left z-10 absolute lg:invisible -left-9999px  opacity-90 cursor-pointer md:hidden"></i>
-                    <img src="images/image-product-1.jpg" alt="" class="lg:rounded-lg relative z-0 cursor-pointer" id="big_image">
+                    <img src="images/image-product-1.jpg" alt="Product Image" class="lg:rounded-lg relative z-0 cursor-pointer" id="big_image">
                     <i class="fa-solid fa-chevron-right  text-sm  bg-slate-50 rounded-full py-3 px-3 right-7 z-10 opacity-90 absolute lg:invisible  cursor-pointer"></i>
                 </div>
                 
                 <div class=" mt-4 gap-5 justify-center hidden lg:flex">
-                    <img src="images/image-product-2-thumbnail.jpg" alt="" class="w-20 rounded-lg h-20 object-cover cursor-pointer hover:opacity-45 duration-150 hover:border-orange-600 border-4" id="image">
+                    <img src="images/image-product-1-thumbnail.jpg" alt="Product Image Thumbnail"  class="w-20 rounded-lg h-20 object-cover cursor-pointer hover:opacity-45 duration-150 "id="image2">
+                    <img src="images/image-product-2-thumbnail.jpg" alt="Product Image Thumbnail" class="w-20 rounded-lg h-20 object-cover cursor-pointer hover:opacity-45 duration-150 " id="image1">
                     
-                    <img src="images/image-product-1-thumbnail.jpg" alt=""  class="w-20 rounded-lg h-20 object-cover cursor-pointer hover:opacity-45 duration-150 hover:border-orange-600 border-4"id="image">
-                    <img src="images/image-product-3-thumbnail.jpg" alt=""  class="w-20 rounded-lg h-20 object-cover cursor-pointer hover:opacity-45 duration-150 hover:border-orange-600 border-4" id="image">
-                    <img src="images/image-product-4-thumbnail.jpg" alt=""  class="w-20 rounded-lg h-20 object-cover cursor-pointer hover:opacity-45 duration-150 hover:border-orange-600 border-4" id="image">
+                    
+                    <img src="images/image-product-3-thumbnail.jpg" alt="Product Image Thumbnail"  class="w-20 rounded-lg h-20 object-cover cursor-pointer hover:opacity-45 duration-150" id="image3">
+                    <img src="images/image-product-4-thumbnail.jpg" alt="Product Image Thumbnail"  class="w-20 rounded-lg h-20 object-cover cursor-pointer hover:opacity-45 duration-150" id="image4">
                 </div>
             </div>
 
@@ -110,16 +124,16 @@
                 </p>
                 <div class="flex justify-between lg:block">
                     <p ><span class="text-black text-2xl font-bold">$125.00</span> <span class="px-3 py-1 text-sm ml-3 bg-black rounded-lg text-slate-100 font-bold">50%</span></p>
-                    <p class="font-bold text-slate-400 line-through py-2">$250.00</p>
+                    <p class="font-bold text-slate-400 line-through py-2" >$250.00</p>
                 </div>
                 
                 <div class="md:flex mt-7 gap-4">
                     <div class="bg-slate-200 px-2 py-2 rounded-md flex justify-between">
-                        <i class="fa-solid fa-minus text-orange-600 text-xl hover:opacity-30 duration-100 cursor-pointer"></i>
-                        <span class="px-9 font-bold">0</span> 
-                        <i class="fa-solid fa-plus text-orange-600 text-xl hover:opacity-30 duration-100 cursor-pointer"></i>
+                        <i class="fa-solid fa-minus text-orange-600 text-xl hover:opacity-30 duration-100 cursor-pointer" id="decrease-quantity"></i>
+                        <span class="px-9 font-bold" id="product-quantity">1</span> 
+                        <i class="fa-solid fa-plus text-orange-600 text-xl hover:opacity-30 duration-100 cursor-pointer" id="increase-quantity"></i>
                     </div>
-                    <div class="bg-orange-500 py-3 px-14 rounded-xl text-center cursor-pointer hover:opacity-45 duration-150">
+                    <div class="bg-orange-500 py-3 px-14 rounded-xl text-center cursor-pointer hover:opacity-45 duration-150" id="add-to-cart">
                         <i class="fa-solid fa-cart-shopping"></i> <span class="font-bold px-3 ">Add to cart</span>
                     </div>
                 </div>
