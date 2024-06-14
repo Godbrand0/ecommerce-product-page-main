@@ -33,7 +33,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](images/Screenshot 2024-06-14 111046.png)
 
 Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
 
@@ -45,42 +45,75 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Add solution URL here](https://github.com/Godbrand0/ecommerce-product-page-main)
+- Live Site URL: [Add live site URL here](https://godbrand0.github.io/ecommerce-product-page-main/page.htm)
 
 ## My process
 
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
+- tailwindCSS custom properties
 - Flexbox
-- CSS Grid
+
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
+
+- [TailwindCSS](https://tailwindcss.com/) - For styles
 
 **Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
-
+this project helped me in my understanding of tailwindcss and javascript, writing the add to cart function was a bit tricky but i had help.
 ```html
 <h1>Some HTML code I'm proud of</h1>
 ```
 ```css
-.proud-of-this-css {
-  color: papayawhip;
-}
+
 ```
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+function reloadCart() {
+        const cartItems = document.getElementById('cart-items');
+        
+        cartItems.innerHTML = ''; 
+         
+        let totalItems = 0;
+
+        for (const key in listCards) {
+            const item = listCards[key];
+            totalItems += item.quantity;
+
+            const totalPrice = (item.quantity * item.price).toFixed(2);
+
+            const itemElement = document.createElement('div');
+            itemElement.className = 'cart-item';
+            itemElement.innerHTML = `
+                <div class="flex m-3 gap-10 flex-col">
+                    <div class="flex  gap-4 items-center">
+                        <img src="${item.image}" alt="${item.name}" class="rounded-md w-12 h-12">
+                        <div class="flex gap-3">
+                            <div class="text-sm text-gray-400">
+                                <p class="">${item.name}</p>
+                                <div class="flex">
+                                    <p class="flex">${item.quantity} x $${item.price}</p>
+                                    <span class="font-bold text-black mx-3">$${totalPrice}</span>
+                                </div>
+                                
+                            </div>
+                            
+                            <i class="fa-solid fa-trash-can cursor-pointer text-gray-400" id="delete"></i>
+                        </div>
+                    </div>
+
+                    <div class="bg-orange-500 py-3 px-14 rounded-xl text-center cursor-pointer hover:opacity-45 duration-150" id="" >
+                        <i class="fa-solid fa-cart-shopping"></i> <span class="font-bold px-3 ">Checkout</span>
+                    </div>
+                </div>
+                
+                
+            `;
+            cartItems.appendChild(itemElement);
+        }}
 ```
 
 If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
@@ -89,16 +122,10 @@ If you want more help with writing markdown, we'd recommend checking out [The Ma
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+i would like to continue my development in javascript.
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
 
-### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
 
 ## Author
 
