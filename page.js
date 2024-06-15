@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const image2 = document.getElementById('image2');
     const image3 = document.getElementById('image3');
     const image4 = document.getElementById('image4');
-    const your = document.querySelector('.your');
+    const your = document.querySelector('#your');
 
 
 
@@ -102,19 +102,38 @@ document.addEventListener('DOMContentLoaded', function () {
         quantityElement.textContent = quantity;
     });
 
-    const products = {
-        1: { name: "Fall Limited Edition Sneakers", price: 125.00, image: "images/image-product-1.jpg" }
-    };
+   
+
+    const products = [
+        {
+            id: 1,
+            name: "Fall Limited Edition Sneakers",
+            price: 125.0,
+            image: "images/image-product-1.jpg",
+        }
+    ];
 
     let listCards = {};
 
     function addToCart(key) {
-    if (listCards[key] == null) {
-        listCards[key] = { ...products[key], quantity: 1 };
-    } else {
-        listCards[key].quantity += 1;
+        if (listCards[key] == null) {
+            listCards[key] = {
+                ...products[0],
+                quantity: +quantityElement.textContent,
+            };
+        } else {
+            listCards[key].quantity += +quantityElement.textContent;
+        }
+        reloadCart();
     }
-    reloadCart();
+    
+    // function addToCart(key) {
+    // if (listCards[key] == null) {
+    //     listCards[key] = { ...products[key], quantity: 1 };
+    // } else {
+    //     listCards[key].quantity += 1;
+    // }
+   
     
     function reloadCart() {
         const cartItems = document.getElementById('cart-items');
@@ -162,12 +181,13 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('cart-count').innerText = totalItems;
     }
 
-    
-}
-document.getElementById('add-to-cart').addEventListener('click', () => {
-    addToCart(1);
-    your.innerHTML = '';
-});
+    document.getElementById('add-to-cart').addEventListener('click', () => {
+        addToCart();
+        your.innerHTML = '';
+    });
+})
+
+
 // const deleteOption = document.querySelector('#delete')
 // deleteOption.addEventListener('click', () => {
    
@@ -184,4 +204,3 @@ document.getElementById('add-to-cart').addEventListener('click', () => {
 //     const key = deleteButton.getAttribute('data-key');
 //     deleteItem(key);
 // });
-})
