@@ -37,7 +37,7 @@ Users should be able to:
 
 Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
 
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
+Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
 
 Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
 
@@ -65,29 +65,32 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 ### What I learned
 
 this project helped me in my understanding of tailwindcss and javascript, writing the add to cart function was a bit tricky but i had help.
+
 ```html
 <h1>Some HTML code I'm proud of</h1>
 ```
+
 ```css
 
 ```
+
 ```js
 function reloadCart() {
-        const cartItems = document.getElementById('cart-items');
-        
-        cartItems.innerHTML = ''; 
-         
-        let totalItems = 0;
+  const cartItems = document.getElementById("cart-items");
 
-        for (const key in listCards) {
-            const item = listCards[key];
-            totalItems += item.quantity;
+  cartItems.innerHTML = "";
 
-            const totalPrice = (item.quantity * item.price).toFixed(2);
+  let totalItems = 0;
 
-            const itemElement = document.createElement('div');
-            itemElement.className = 'cart-item';
-            itemElement.innerHTML = `
+  for (const key in listCards) {
+    const item = listCards[key];
+    totalItems += item.quantity;
+
+    const totalPrice = (item.quantity * item.price).toFixed(2);
+
+    const itemElement = document.createElement("div");
+    itemElement.className = "cart-item";
+    itemElement.innerHTML = `
                 <div class="flex m-3 gap-10 flex-col">
                     <div class="flex  gap-4 items-center">
                         <img src="${item.image}" alt="${item.name}" class="rounded-md w-12 h-12">
@@ -112,8 +115,9 @@ function reloadCart() {
                 
                 
             `;
-            cartItems.appendChild(itemElement);
-        }}
+    cartItems.appendChild(itemElement);
+  }
+}
 ```
 
 If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
@@ -123,9 +127,6 @@ If you want more help with writing markdown, we'd recommend checking out [The Ma
 ### Continued development
 
 i would like to continue my development in javascript.
-
-
-
 
 ## Author
 
